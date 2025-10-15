@@ -1,0 +1,112 @@
+<div class="flex-1 flex flex-col p-8">
+  <div class="flex-1 flex flex-col">
+    <h2
+      *ngIf="!editMode; else editTitle"
+      class="text-3xl font-bold text-gray-900 dark:text-white mb-6"
+    >
+      New Contact
+    </h2>
+    <ng-template #editTitle>
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+        Edit Contact
+      </h2>
+    </ng-template>
+    <!-- Lier le formulaire au FormGroup et gérer la soumission -->
+    <form
+      [formGroup]="contactForm"
+      (ngSubmit)="onSubmit()"
+      class="space-y-6 max-w-lg"
+    >
+      <div>
+        <label
+          class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+          for="first-name"
+          >First Name</label
+        >
+        <div class="mt-1">
+          <input
+            formControlName="firstName"
+            class="block w-full border-gray-300 rounded-md shadow-sm dark:bg-gray-800 dark:border-gray-600 focus:ring-primary focus:border-primary sm:text-sm"
+            id="first-name"
+            type="text"
+          />
+        </div>
+      </div>
+      <div>
+        <label
+          class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+          for="last-name"
+          >Last Name</label
+        >
+        <div class="mt-1">
+          <input
+            formControlName="lastName"
+            class="block w-full border-gray-300 rounded-md shadow-sm dark:bg-gray-800 dark:border-gray-600 focus:ring-primary focus:border-primary sm:text-sm"
+            id="last-name"
+            type="text"
+          />
+        </div>
+      </div>
+      <div>
+        <label
+          class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+          for="email"
+          >Email</label
+        >
+        <div class="mt-1">
+          <input
+            formControlName="email"
+            class="block w-full border-gray-300 rounded-md shadow-sm dark:bg-gray-800 dark:border-gray-600 focus:ring-primary focus:border-primary sm:text-sm"
+            id="email"
+            type="email"
+          />
+        </div>
+      </div>
+      <div>
+        <label
+          class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+          for="phone"
+          >Phone</label
+        >
+        <div class="mt-1">
+          <input
+            formControlName="phone"
+            class="block w-full border-gray-300 rounded-md shadow-sm dark:bg-gray-800 dark:border-gray-600 focus:ring-primary focus:border-primary sm:text-sm"
+            id="phone"
+            type="tel"
+          />
+        </div>
+      </div>
+      <div>
+        <label
+          class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+          for="company"
+          >Company</label
+        >
+        <div class="mt-1">
+          <input
+            formControlName="company"
+            class="block w-full border-gray-300 rounded-md shadow-sm dark:bg-gray-800 dark:border-gray-600 focus:ring-primary focus:border-primary sm:text-sm"
+            id="company"
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="flex justify-end gap-4 pt-4">
+        <button
+          (click)="onCancel()"
+          class="px-6 py-2 text-sm font-medium text-gray-800 dark:text-gray-200 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          class="px-6 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary/90 transition-colors"
+          type="submit"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

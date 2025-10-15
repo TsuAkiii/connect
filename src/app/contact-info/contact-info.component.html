@@ -1,0 +1,57 @@
+<div *ngIf="contact; else noContact" class="flex-1 flex flex-col p-8">
+  <div
+    class="flex flex-col items-center justify-center flex-1 h-full text-center"
+  >
+    <div
+      class="w-32 h-32 mb-6 bg-center bg-no-repeat bg-cover rounded-full"
+      style="
+        background-image: url('{{ contact.photoUrl }}');
+      "
+    ></div>
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
+      {{ contact.firstName }} {{ contact.lastName }}
+    </h2>
+    <p class="text-lg text-gray-500 dark:text-gray-400 mt-1">
+      {{ contact.email }}
+    </p>
+    <div class="w-full max-w-md mt-8">
+      <div
+        class="py-4 border-t border-gray-200 dark:border-gray-800 flex justify-between"
+      >
+        <p class="text-sm text-gray-500 dark:text-gray-400">Phone</p>
+        <p class="text-sm font-medium text-gray-900 dark:text-white">
+          {{ contact.phone }}
+        </p>
+      </div>
+      <div
+        class="py-4 border-t border-b border-gray-200 dark:border-gray-800 flex justify-between"
+      >
+        <p class="text-sm text-gray-500 dark:text-gray-400">Company</p>
+        <p class="text-sm font-medium text-gray-900 dark:text-white">
+          {{ contact.company }}
+        </p>
+      </div>
+    </div>
+    <div class="flex gap-4 mt-8">
+      <button
+        (click)="editContact()"
+        class="px-6 py-2 text-sm font-medium text-gray-800 dark:text-gray-200 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+      >
+        Edit
+      </button>
+      <button
+        (click)="removeContact()"
+        class="px-6 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary/90 transition-colors"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
+<ng-template #noContact>
+  <div
+    class="flex flex-1 items-center justify-center text-center p-8 text-gray-500 dark:text-gray-400"
+  >
+    <p>Select a contact to view their details.</p>
+  </div>
+</ng-template>

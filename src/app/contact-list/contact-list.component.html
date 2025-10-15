@@ -1,0 +1,44 @@
+<div class="w-96 border-r border-gray-200 dark:border-gray-800 flex flex-col">
+  <div class="p-4 border-b border-gray-200 dark:border-gray-800">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Contacts</h2>
+      <button
+        (click)="onAddNewContactClick()"
+        class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white rounded-lg bg-primary hover:bg-primary/90"
+      >
+        <span class="material-symbols-outlined">add</span>
+        New Contact
+      </button>
+    </div>
+  </div>
+  <div class="flex-1 overflow-y-auto">
+    <div *ngFor="let contact of contacts">
+      <a
+        [ngClass]="{
+          'bg-primary/10 dark:bg-primary/20 border-l-4 border-primary':
+            contact.id === selectedContact?.id,
+          'hover:bg-gray-100 dark:hover:bg-gray-800/50':
+            contact.id !== selectedContact?.id
+        }"
+        class="flex items-center gap-4 px-4 py-3 cursor-pointer"
+        (click)="onSelectContact(contact)"
+        href="#"
+      >
+        <div
+          class="w-12 h-12 bg-center bg-no-repeat bg-cover rounded-full"
+          style="
+            background-image: url('{{ contact.photoUrl }}');
+          "
+        ></div>
+        <div class="flex-1">
+          <p class="font-semibold text-gray-900 dark:text-white">
+            {{ contact.firstName }} {{ contact.lastName }}
+          </p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            {{ contact.email }}
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
