@@ -1,59 +1,42 @@
-# Connect
+# Connect - A Modern Contact Management App
+Connect is a responsive and intuitive Single Page Application (SPA) for managing personal and professional contacts. Built entirely with Angular, this project demonstrates a strong command of modern front-end architecture, component-based design, and state management.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
+The primary goal of this project is to showcase advanced front-end skills in a standalone environment, simulating a real-world application that would typically connect to a REST API.
 
-## Development server
+# 🚀 Live Demo
+[>>> [demo](https://connect-tsuakiiis-projects.vercel.app/) <<<]
 
-To start a local development server, run:
+# ✨ Key Features
+Create, Read, Update & Delete (CRUD): Full functionality to manage your contacts.
 
-```bash
-ng serve
-```
+Reactive Forms: Robust and scalable forms for adding and editing contacts with real-time validation.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Dynamic Search: Instantly filter the contact list as you type.
 
-## Code scaffolding
+Clean & Responsive UI: A professional and user-friendly interface built with Angular Material that works seamlessly on all screen sizes.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Component-Based Architecture: The application is logically structured into reusable and maintainable components.
 
-```bash
-ng generate component component-name
-```
+# 🎯 Technical Focus: API Simulation & State Management
+This project deliberately operates without a back-end to place a strong emphasis on front-end development patterns.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Instead of making real HTTP calls, a dedicated mock data service (ContactDataService) is used to simulate the behavior of a REST API. This service uses RxJS Observables to provide asynchronous data, perfectly mimicking how an Angular application would interact with a live server.
 
-```bash
-ng generate --help
-```
+This approach demonstrates:
 
-## Building
+Separation of Concerns: The data logic is completely decoupled from the components that display it.
 
-To build the project run:
+Dependency Injection: The mock service is injected into components, meaning it could be swapped with a real HttpClient-based service with zero changes to the components themselves.
 
-```bash
-ng build
-```
+Mastery of RxJS: Handling asynchronous data streams, which is a core skill for any modern web developer.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+# 🛠️ Tech Stack
+Framework: Angular
 
-## Running unit tests
+Language: TypeScript
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+UI Library: Tailwinds for a high-quality.
 
-```bash
-ng test
-```
+Reactive Programming: RxJS for managing asynchronous operations and data streams.
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Forms: Angular Reactive Forms for powerful and testable form controls.
